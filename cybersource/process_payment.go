@@ -21,7 +21,6 @@ func (c *Client) ProcessPayment(createPaymentReq *request.CreatePaymentRequest) 
 	if err != nil {
 		return nil, err
 	}
-	fmt.Printf("body: %s\n", string(body))
 
 	var createPaymentResponse response.CreatePaymentResponse
 	err = json.Unmarshal(body, &createPaymentResponse)
