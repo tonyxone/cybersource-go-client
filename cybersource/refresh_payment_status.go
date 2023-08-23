@@ -8,11 +8,9 @@ import (
 	"io/ioutil"
 )
 
-func (c *Client) ProcessPayment(req *request.CreatePaymentRequest) (*response.CreatePaymentResponse, error) {
-	resource := "/pts/v2/payments"
-	resp, err := c.doPost(resource, req)
-	fmt.Println(resp.StatusCode)
-	defer resp.Body.Close()
+func (c *Client) RefreshPaymentStatus(requestID string, request *request.RefreshPaymentStatusRequest) (*response.RefreshPaymentStatusResponse, error) {
+	resource := "/pts/v2/refresh-payment-status/" + requestID
+	resp, err := c.doPost(resource, request)
 	if err != nil {
 		return nil, err
 	}
@@ -23,10 +21,10 @@ func (c *Client) ProcessPayment(req *request.CreatePaymentRequest) (*response.Cr
 	}
 	fmt.Printf("body: %v\n", string(body))
 
-	var createPaymentResp response.CreatePaymentResponse
-	err = json.Unmarshal(body, &createPaymentResp)
+	var refreshPaymentStatusResp response.RefreshPaymentStatusResponse
+	err = json.Unmarshal(body, &refreshPaymentStatusResp)
 	if err != nil {
 		return nil, err
 	}
-	return &createPaymentResp, nil
+	return &refreshPaymentStatusResp, nil
 }

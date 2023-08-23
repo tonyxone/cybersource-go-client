@@ -12,7 +12,7 @@ func (c *Client) doGet(resource string) (*http.Response, error) {
 	digest := "" // Digest is not required for GET calls
 	signature := c.createSignatureHeader(http.MethodGet, resource, digest, gmtDateTime)
 
-	req, err := http.NewRequest(http.MethodPost, url, nil)
+	req, err := http.NewRequest(http.MethodGet, url, nil)
 	if err != nil {
 		return &http.Response{}, err
 	}
