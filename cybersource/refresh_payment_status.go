@@ -2,7 +2,6 @@ package cybersource
 
 import (
 	"encoding/json"
-	"fmt"
 	"github.com/tonyxone/cybersource-rest-sdk-go/cybersource/model/request"
 	"github.com/tonyxone/cybersource-rest-sdk-go/cybersource/model/response"
 	"io/ioutil"
@@ -19,7 +18,6 @@ func (c *Client) RefreshPaymentStatus(requestID string, request *request.Refresh
 	if err != nil {
 		return nil, err
 	}
-	fmt.Printf("body: %v\n", string(body))
 
 	var refreshPaymentStatusResp response.RefreshPaymentStatusResponse
 	err = json.Unmarshal(body, &refreshPaymentStatusResp)
