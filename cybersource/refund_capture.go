@@ -7,8 +7,8 @@ import (
 	"io/ioutil"
 )
 
-func (c *Client) ProcessPayment(req *request.CreatePaymentRequest) (*response.PaymentResponse, error) {
-	resource := "/pts/v2/payments"
+func (c *Client) RefundCapture(requestID string, req *request.RefundRequest) (*response.RefundResponse, error) {
+	resource := "/pts/v2/captures/" + requestID + "/refunds"
 	resp, err := c.doPost(resource, req)
 	defer resp.Body.Close()
 	if err != nil {
@@ -20,10 +20,10 @@ func (c *Client) ProcessPayment(req *request.CreatePaymentRequest) (*response.Pa
 		return nil, err
 	}
 
-	var paymentResp response.PaymentResponse
-	err = json.Unmarshal(body, &paymentResp)
+	var refundResp response.RefundResponse
+	err = json.Unmarshal(body, &refundResp)
 	if err != nil {
 		return nil, err
 	}
-	return &paymentResp, nil
+	return &refundResp, nil
 }

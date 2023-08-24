@@ -1,6 +1,6 @@
 package response
 
-type CreatePaymentResponse struct {
+type PaymentResponse struct {
 	ID                                string                             `json:"id,omitempty"`
 	Status                            string                             `json:"status,omitempty"`
 	ReconciliationID                  string                             `json:"reconciliationId,omitempty"`

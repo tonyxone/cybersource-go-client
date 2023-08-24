@@ -7,8 +7,8 @@ import (
 	"io/ioutil"
 )
 
-func (c *Client) ProcessPayment(req *request.CreatePaymentRequest) (*response.PaymentResponse, error) {
-	resource := "/pts/v2/payments"
+func (c *Client) ReverseAuthorization(requestID string, req *request.ReverseAuthRequest) (*response.PaymentResponse, error) {
+	resource := "/pts/v2/payments/" + requestID + "/reversals"
 	resp, err := c.doPost(resource, req)
 	defer resp.Body.Close()
 	if err != nil {
