@@ -11,8 +11,8 @@ type PaymentInformation struct {
 	LegacyToken          *PaymentInformationLegacyToken          `json:"legacyToken,omitempty"`
 	Bank                 *PaymentInformationBank                 `json:"bank,omitempty"`
 	PaymentType          *PaymentInformationPaymentType          `json:"paymentType,omitempty"`
-	InitiationChannel    string                                  `json:"initiationChannel,omitempty"`
 	EWallet              *PaymentInformationEWallet              `json:"eWallet,omitempty"`
+	InitiationChannel    string                                  `json:"initiationChannel,omitempty"`
 }
 
 type PaymentInformationCard struct {

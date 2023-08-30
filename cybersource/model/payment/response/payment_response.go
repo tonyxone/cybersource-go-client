@@ -21,4 +21,7 @@ type PaymentResponse struct {
 	ConsumerAuthenticationInformation *ConsumerAuthenticationInformation `json:"consumerAuthenticationInformation,omitempty"`
 	EmbeddedActions                   *EmbeddedActions                   `json:"embeddedActions,omitempty"`
 	WatchlistScreeningInformation     *WatchlistScreeningInformation     `json:"watchlistScreeningInformation,omitempty"`
+	// Reason and Message will populate for 400 and 500 responses
+	Reason  string `json:"reason,omitempty"`
+	Message string `json:"message,omitempty"`
 }
