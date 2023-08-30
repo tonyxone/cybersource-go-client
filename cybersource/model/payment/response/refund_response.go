@@ -10,6 +10,9 @@ type RefundResponse struct {
 	ProcessorInformation       *ProcessorInformation       `json:"processorInformation,omitempty"`
 	OrderInformation           *OrderInformation           `json:"orderInformation,omitempty"`
 	PointOfSaleInformation     *PointOfSaleInformation     `json:"pointOfSaleInformation,omitempty"`
+	// Reason and Message will populate for 400 and 500 responses
+	Reason  string `json:"reason,omitempty"`
+	Message string `json:"message,omitempty"`
 }
 
 type RefundAmountDetails struct {
