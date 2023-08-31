@@ -7,9 +7,9 @@ import (
 	"io/ioutil"
 )
 
-func (c *Client) UpdateCustomer(customerID string, req *request.CustomerRequest) (*response.CustomersResponse, error) {
-	resource := "/tms/v2/customers/" + customerID
-	resp, err := c.doPatch(resource, req)
+func (c *Client) CreateInstrumentIdentifier(req *request.InstrumentIdentifierRequest) (*response.InstrumentIdentifierResponse, error) {
+	resource := "/tms/v1/instrumentidentifiers"
+	resp, err := c.doPost(resource, req)
 	defer resp.Body.Close()
 	if err != nil {
 		return nil, err
@@ -20,10 +20,10 @@ func (c *Client) UpdateCustomer(customerID string, req *request.CustomerRequest)
 		return nil, err
 	}
 
-	var customerResp response.CustomersResponse
-	err = json.Unmarshal(body, &customerResp)
+	var instrumentIdentifierResp response.InstrumentIdentifierResponse
+	err = json.Unmarshal(body, &instrumentIdentifierResp)
 	if err != nil {
 		return nil, err
 	}
-	return &customerResp, nil
+	return &instrumentIdentifierResp, nil
 }

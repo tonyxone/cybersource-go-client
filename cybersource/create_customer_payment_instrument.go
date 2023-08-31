@@ -7,8 +7,8 @@ import (
 	"io/ioutil"
 )
 
-func (c *Client) CreateCustomer(req *request.CustomerRequest) (*response.CustomersResponse, error) {
-	resource := "/tms/v2/customers"
+func (c *Client) CreateCustomerPaymentInstrument(customerID string, req *request.CustomerPaymentInstrumentRequest) (*response.CustomerPaymentInstrumentResponse, error) {
+	resource := "/tms/v2/customers/" + customerID + "/payment-instruments"
 	resp, err := c.doPost(resource, req)
 	defer resp.Body.Close()
 	if err != nil {
@@ -20,10 +20,10 @@ func (c *Client) CreateCustomer(req *request.CustomerRequest) (*response.Custome
 		return nil, err
 	}
 
-	var customerResp response.CustomersResponse
-	err = json.Unmarshal(body, &customerResp)
+	var paymentInstrumentResp response.CustomerPaymentInstrumentResponse
+	err = json.Unmarshal(body, &paymentInstrumentResp)
 	if err != nil {
 		return nil, err
 	}
-	return &customerResp, nil
+	return &paymentInstrumentResp, nil
 }
