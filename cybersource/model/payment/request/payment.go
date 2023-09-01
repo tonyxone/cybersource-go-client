@@ -4,7 +4,7 @@ type PaymentInformation struct {
 	Card                 *PaymentInformationCard                 `json:"card,omitempty"`
 	TokenizedCard        *PaymentInformationTokenizedCard        `json:"tokenizedCard,omitempty"`
 	FluidData            *PaymentInformationFluidData            `json:"fluidData,omitempty"`
-	Customer             *PaymentInformationCustomer             `json:"customer,omitempty"`
+	Customer             *PaymentInformationCustomer             `json:"token_management,omitempty"`
 	PaymentInstrument    *PaymentInformationPaymentInstrument    `json:"paymentInstrument,omitempty"`
 	InstrumentIdentifier *PaymentInformationInstrumentIdentifier `json:"instrumentIdentifier,omitempty"`
 	ShippingAddress      *PaymentInformationShippingAddress      `json:"shippingAddress,omitempty"`

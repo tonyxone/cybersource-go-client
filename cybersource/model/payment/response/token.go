@@ -2,7 +2,7 @@ package response
 
 type TokenInformation struct {
 	InstrumentIdentifierNew bool                                  `json:"instrumentidentifierNew,omitempty"`
-	Customer                *TokenInformationCustomer             `json:"customer,omitempty"`
+	Customer                *TokenInformationCustomer             `json:"token_management,omitempty"`
 	PaymentInstrument       *TokenInformationPaymentInstrument    `json:"paymentInstrument,omitempty"`
 	InstrumentIdentifier    *TokenInformationInstrumentIdentifier `json:"instrumentIdentifier,omitempty"`
 	ShippingAddress         *TokenInformationShippingAddress      `json:"shippingAddress,omitempty"`

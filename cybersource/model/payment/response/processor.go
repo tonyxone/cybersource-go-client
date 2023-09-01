@@ -31,7 +31,7 @@ type ProcessorInformation struct {
 	MerchantAdvice                 *ProcessorInformationMerchantAdvice                 `json:"merchantAdvice,omitempty"`
 	ElectronicVerificationResults  *ProcessorInformationElectronicVerificationResults  `json:"electronicVerificationResults,omitempty"`
 	AchVerification                *ProcessorInformationAchVerification                `json:"achVerification,omitempty"`
-	Customer                       *ProcessorInformationCustomer                       `json:"customer,omitempty"`
+	Customer                       *ProcessorInformationCustomer                       `json:"token_management,omitempty"`
 	ConsumerAuthenticationResponse *ProcessorInformationConsumerAuthenticationResponse `json:"consumerAuthenticationResponse,omitempty"`
 	Routing                        *ProcessorInformationRouting                        `json:"routing,omitempty"`
 }
