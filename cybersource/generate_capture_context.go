@@ -9,7 +9,7 @@ import (
 )
 
 func (c *Client) GenerateCaptureContext(req *request.GenerateCaptureContextRequest) (*response.GenerateCaptureContextResponse, error) {
-	resource := "/microform/v2/sessions1"
+	resource := "/microform/v2/sessions"
 	resp, err := c.doPost(resource, req)
 	defer resp.Body.Close()
 	if err != nil {
