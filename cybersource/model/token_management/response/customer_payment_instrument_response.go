@@ -16,4 +16,8 @@ type CustomerPaymentInstrumentResponse struct {
 	MerchantInformation   *token_management.PaymentInstrumentMerchantInformation   `json:"merchantInformation"`
 	InstrumentIdentifier  *token_management.PaymentInstrumentIdentifier            `json:"instrumentIdentifier"`
 	Metadata              *token_management.PaymentInstrumentMetadata              `json:"metadata"`
+	// Reason and Message will be populated for 400 and 500 responses
+	Reason  string    `json:"reason,omitempty"`
+	Message string    `json:"message,omitempty"`
+	Errors  []*Errors `json:"errors,omitempty"`
 }

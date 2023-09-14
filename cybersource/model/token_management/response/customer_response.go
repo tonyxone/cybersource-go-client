@@ -11,4 +11,19 @@ type CustomersResponse struct {
 	DefaultPaymentInstrument   *token_management.DefaultPaymentInstrument     `json:"defaultPaymentInstrument,omitempty"`
 	DefaultShippingAddress     *token_management.DefaultShippingAddress       `json:"defaultShippingAddress,omitempty"`
 	Metadata                   *token_management.CustomersMetadata            `json:"metadata,omitempty"`
+	// Reason and Message will be populated for 400 and 500 responses
+	Reason  string    `json:"reason,omitempty"`
+	Message string    `json:"message,omitempty"`
+	Errors  []*Errors `json:"errors,omitempty"`
+}
+
+type Errors struct {
+	Type    string          `json:"type,omitempty"`
+	Message string          `json:"message,omitempty"`
+	Details []*ErrorDetails `json:"details,omitempty"`
+}
+
+type ErrorDetails struct {
+	Name     string `json:"name,omitempty"`
+	Location string `json:"location,omitempty"`
 }
