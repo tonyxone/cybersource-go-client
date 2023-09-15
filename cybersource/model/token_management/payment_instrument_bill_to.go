@@ -1,15 +1,15 @@
 package token_management
 
 type PaymentInstrumentBillTo struct {
-	FirstName          string `json:"firstName"`
-	LastName           string `json:"lastName"`
-	Company            string `json:"company"`
-	Address1           string `json:"address1"`
-	Address2           string `json:"address2"`
-	Locality           string `json:"locality"`
-	AdministrativeArea string `json:"administrativeArea"`
-	PostalCode         string `json:"postalCode"`
-	Country            string `json:"country"`
-	Email              string `json:"email"`
-	PhoneNumber        string `json:"phoneNumber"`
+	FirstName          string `json:"firstName,omitempty"`
+	LastName           string `json:"lastName,omitempty"`
+	Company            string `json:"company,omitempty"`
+	Address1           string `json:"address1,omitempty"`
+	Address2           string `json:"address2,omitempty"`
+	Locality           string `json:"locality,omitempty"`
+	AdministrativeArea string `json:"administrativeArea,omitempty"`
+	PostalCode         string `json:"postalCode,omitempty"`
+	Country            string `json:"country,omitempty"`
+	Email              string `json:"email,omitempty"`
+	PhoneNumber        string `json:"phoneNumber,omitempty"`
 }

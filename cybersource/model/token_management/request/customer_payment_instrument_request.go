@@ -3,6 +3,7 @@ package request
 import "github.com/tonyxone/cybersource-rest-sdk-go/cybersource/model/token_management"
 
 type CustomerPaymentInstrumentRequest struct {
+	Default               bool                                                     `json:"default,omitempty"`
 	BankAccount           *token_management.PaymentInstrumentBankAccount           `json:"bankAccount,omitempty"`
 	Card                  *token_management.PaymentInstrumentCard                  `json:"card,omitempty"`
 	BuyerInformation      *token_management.PaymentInstrumentBuyerInformation      `json:"buyerInformation,omitempty"`
