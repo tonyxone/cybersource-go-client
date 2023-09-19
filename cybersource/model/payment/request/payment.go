@@ -93,9 +93,9 @@ type PaymentInformationBankAccount struct {
 }
 
 type PaymentInformationPaymentType struct {
-	Name        string                               `json:"name,omitempty"`
-	SubTypeName string                               `json:"subTypeName,omitempty"`
-	Method      *PaymentInformationPaymentTypeMethod `json:"method,omitempty"`
+	Name        string `json:"name,omitempty"`
+	SubTypeName string `json:"subTypeName,omitempty"`
+	Type        string `json:"type,omitempty"`
 }
 
 type PaymentInformationPaymentTypeMethod struct {

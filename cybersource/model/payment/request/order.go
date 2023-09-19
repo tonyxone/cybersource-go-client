@@ -4,7 +4,6 @@ type OrderInformation struct {
 	AmountDetails            *OrderInformationAmountDetails   `json:"amountDetails,omitempty"`
 	BillTo                   *OrderInformationBillTo          `json:"billTo,omitempty"`
 	ShipTo                   *OrderInformationShipTo          `json:"shipTo,omitempty"`
-	LineItems                []*OrderInformationLineItems     `json:"lineItems,omitempty"`
 	InvoiceDetails           *OrderInformationInvoiceDetails  `json:"invoiceDetails,omitempty"`
 	ShippingDetails          *OrderInformationShippingDetails `json:"shippingDetails,omitempty"`
 	ReturnsAccepted          bool                             `json:"returnsAccepted,omitempty"`
